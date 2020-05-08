@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "clean": "rm -rf dist",
-    "deploy": "yarn run clean && yarn run build"
+    "deploy": "npm run clean && npm run build"
   },
   "dependencies": {
     "@simonwep/pickr": "^1.5.1",

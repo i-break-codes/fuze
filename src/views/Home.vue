@@ -69,15 +69,11 @@ export default {
     async copyCode(event) {
       event.preventDefault();
 
-      try {
-        await this.$copyText(this.configureGradient());
-        this.showNotification({
-          show: true,
-          message: 'Code Copied',
-        });
-      } catch (e) {
-        console.log('Shit broke');
-      }
+      await this.$copyText(this.configureGradient());
+      this.showNotification({
+        show: true,
+        message: 'Code Copied',
+      });
     },
   },
   mounted() {
