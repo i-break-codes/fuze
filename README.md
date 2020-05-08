@@ -1,4 +1,4 @@
-# fuse
+# fuze
 
 ## Project setup
 ```

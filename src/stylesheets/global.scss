@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import '@simonwep/pickr/dist/themes/nano.min';
+@import 'vue-slider-component/theme/antd';
+
+@font-face {
+  font-family: Coves;
+  src: url('~@/assets/fonts/coves_light-webfont.woff2') format('woff2'), url('~@/assets/fonts/coves_light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Lombok;
+  src: url('~@/assets/fonts/lombok-webfont.woff2') format('woff2'), url('~@/assets/fonts/lombok-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+	--white: #fff;
+	--black-80: rgba(0,0,0,.8);
+	--white-10: rgba(255,255,255,.1);
+	--pink: #d42274;
+}
+
+::selection {
+  background-color: var(--pink);
+  color: var(--white);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+	background: linear-gradient(-45deg,#EA225E, #C22286, #612E8D);
+	background-size: 200% 200%;
+	animation: fuze 10s ease infinite;
+	height: 100%;
+  font-family: Coves;
+  font-size: 18px;
+	color: var(--white);
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed;
+  overflow: hidden;
+  text-shadow: 0 0 8px rgba(0, 0, 0, .2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 500ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 500ms ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fuze {
+	0%{background-position: 0% 50%}
+	50%{background-position: 100% 50%}
+	100%{background-position: 0% 50%}
+}
+
+h1, h2, h3, h4 {
+	font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hide {
+	display: none !important;
+}
+
+//todo not sure why I need to keep this in global, fails in scoped version, check again
+//! overriding pickr plugin, cautios before changes
+.pickr {
+  margin-top: 40px;
+  text-align: center;
+
+  .pcr-button {
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 50% !important;
+    align-items: center !important;
+
+    &:before,
+    &:after {
+      border-radius: 50% !important;
+    }
+  }
+}
+
+.pcr-app input:focus {
+  box-shadow: none !important;
+}
+
+.pcr-app .pcr-interaction .pcr-save {
+  width: 100%;
+  background-color: var(--pink);
+}
+
+@keyframes fadeOutLeft {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.fadeOutLeft {
+  animation: fadeOutLeft 350ms ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInRight {
+  animation: fadeInRight 350ms ease-in forwards;
+}
+
+@keyframes fadeOutRight {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+.fadeOutRight {
+  animation: fadeOutRight 350ms ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInLeft {
+  animation: fadeInLeft 350ms ease-in forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.fadeInDown {
+  animation: fadeInDown 350ms ease-out forwards;
+}
