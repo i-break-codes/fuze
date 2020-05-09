@@ -2,9 +2,6 @@
 
 const state = {
   palettes: [],
-  advancedSettings: false,
-  angle: 45,
-  speed: 10,
   codeBox: false,
 };
 
@@ -14,15 +11,6 @@ const actions = {
   },
   clearAll({ commit }) {
     commit('REMOVE_ALL_PALETTES');
-  },
-  toggleAdvancedSettings({ commit }) {
-    commit('SET_ADVANCED_SETTINGS');
-  },
-  changeAngle({ commit }, angle) {
-    commit('SET_ANGLE', angle);
-  },
-  changeSpeed({ commit }, speed) {
-    commit('SET_SPEED', speed);
   },
   removePalette({ commit }, palette) {
     commit('REMOVE_PALETTE', palette);
@@ -39,15 +27,6 @@ const mutations = {
   REMOVE_ALL_PALETTES: (state) => {
     state.palettes = [];
   },
-  SET_ADVANCED_SETTINGS: (state) => {
-    state.advancedSettings = !state.advancedSettings;
-  },
-  SET_ANGLE: (state, angle) => {
-    state.angle = angle;
-  },
-  SET_SPEED: (state, speed) => {
-    state.speed = speed;
-  },
   REMOVE_PALETTE: (state, palette) => {
     state.palettes = state.palettes.filter((e) => e !== palette);
   },
@@ -58,9 +37,6 @@ const mutations = {
 
 const getters = {
   allPalettes: (state) => state.palettes,
-  advancedSettings: (state) => state.advancedSettings,
-  getAngle: (state) => state.angle,
-  getSpeed: (state) => state.speed,
 };
 
 export default {
