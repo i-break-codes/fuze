@@ -1,5 +1,5 @@
 
-![Fuze - CSS Gradient Animator Banner](https://fuze.8bit.codes/img/fuze-banner.jpg)
+![Fuze - CSS Gradient Animator Banner](https://github.com/i-break-codes/fuze/blob/master/public/img/fuze-banner.jpg)
 <p align="center"><strong>CSS Gradient Animator Tool</strong></p>
 
 ![Travis (.org)](https://img.shields.io/travis/i-break-codes/fuze?style=flat-square) ![GitHub](https://img.shields.io/github/license/i-break-codes/fuze?color=d42274&style=flat-square)  ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/i-break-codes/fuze?color=d42274&style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/i-break-codes/fuze?color=d42274&style=flat-square) ![Depfu](https://img.shields.io/depfu/i-break-codes/fuze?color=d42274&style=flat-square) ![GitHub last commit](https://img.shields.io/github/last-commit/i-break-codes/fuze?color=d42274&style=flat-square)  
@@ -9,12 +9,12 @@ A simple CSS Gradient Animator tool powered by VueJS, VueX and SASS. Idea behind
 ---
 
 ### Quick Preview
-<img src="https://fuze.8bit.codes/img/fuze-demo.gif" alt="Fuze - CSS Gradient Animator Movie">
+<img src="https://github.com/i-break-codes/fuze/blob/master/public/img/fuze-demo.gif" alt="Fuze - CSS Gradient Animator Movie">
 
 ---
 
 ### Live Demo
-<a href="https://i-break-codes.github.io/fuze/"><img src="https://fuze.8bit.codes/img/try-it-out.jpg" width="150"></a>
+<a href="https://fuse.8bit.codes"><img src="https://github.com/i-break-codes/fuze/blob/master/public/img/try-it-out.jpg" width="150"></a>
 
 ---
 
