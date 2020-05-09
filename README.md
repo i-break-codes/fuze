@@ -14,7 +14,7 @@ A simple CSS Gradient Animator tool powered by VueJS, VueX and SASS. Idea behind
 ---
 
 ### Live Demo
-<a href="https://i-break-codes.github.io/fuze/" target="_blank"><img src="https://github.com/i-break-codes/fuze/blob/master/public/img/try-it-out.jpg" width="150"></a>
+<a href="https://fuze.8bit.codes"><img src="https://github.com/i-break-codes/fuze/blob/master/public/img/try-it-out.jpg" width="150"></a>
 
 ---
 
