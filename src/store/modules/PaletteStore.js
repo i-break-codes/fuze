@@ -6,11 +6,6 @@ const state = {
   angle: 45,
   speed: 10,
   codeBox: false,
-  notification: {
-    show: false,
-    type: 'info',
-    message: '',
-  },
 };
 
 const actions = {
@@ -34,9 +29,6 @@ const actions = {
   },
   applyPresets({ commit }, preset) {
     commit('SET_PRESET', preset);
-  },
-  showNotification({ commit }, meta) {
-    commit('SET_NOTIFICATION', meta);
   },
 };
 
@@ -62,9 +54,6 @@ const mutations = {
   SET_PRESET: (state, preset) => {
     state.palettes = preset;
   },
-  SET_NOTIFICATION: (state, meta) => {
-    state.notification = { ...state.notification, ...meta };
-  },
 };
 
 const getters = {
@@ -72,7 +61,6 @@ const getters = {
   advancedSettings: (state) => state.advancedSettings,
   getAngle: (state) => state.angle,
   getSpeed: (state) => state.speed,
-  getNotification: (state) => state.notification,
 };
 
 export default {
