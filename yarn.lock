@@ -911,12 +911,12 @@
     "@sentry/types" "5.15.5"
     tslib "^1.9.3"
 
-"@simonwep/pickr@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@simonwep/pickr/-/pickr-1.5.1.tgz#884a82e4628f7460b7cbd73c6f9ae2f1980639c5"
-  integrity sha512-BMYt5RsW7YLNrUF7Jdz1UM0E04ROD0iv/Z/c8APFb74VH0Zs3HeLiLacPgPqLx23VesL8aS6Jin/JiTmnkWujw==
+"@simonwep/pickr@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@simonwep/pickr/-/pickr-1.6.0.tgz#bc5e14bf29acb8e97a3b57652f98dc8e2ed60d8e"
+  integrity sha512-hvAozlQuncF3s2ymVJ1JGLb/b94O8s7WNqKIA0sI7PIh8u8NozjAiQtdEdtI/v4rJ+HrXaznESOX0/xMayVDLA==
   dependencies:
-    core-js "^3.6.4"
+    core-js "^3.6.5"
 
 "@soda/friendly-errors-webpack-plugin@^1.7.1":
   version "1.7.1"
@@ -2634,7 +2634,7 @@ core-js@^2.4.0:
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.11.tgz#38831469f9922bded8ee21c9dc46985e0399308c"
   integrity sha512-5wjnpaT/3dV+XB4borEsnAYQchn00XSgTAWKDkEqv+K8KevjbzmofK6hfJ9TZIlpj2N0xQpazy7PiRQiWHqzWg==
 
-core-js@^3.6.4:
+core-js@^3.6.4, core-js@^3.6.5:
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.5.tgz#7395dc273af37fb2e50e9bd3d9fe841285231d1a"
   integrity sha512-vZVEEwZoIsI+vPEuoF9Iqf5H7/M3eeQqWlQnYa8FSKKePuYTf5MWnxb5SDAzCa60b3JBRS5g9b+Dq7b1y/RCrA==
