@@ -39,7 +39,6 @@ import Notification from '@/components/Notification';
 
 export default {
   name: 'Home',
-  mixins: [Generator],
   metaInfo: {
     title: 'CSS Gradient Animator',
     titleTemplate: '%s | Fuze',
@@ -57,24 +56,14 @@ export default {
     Version,
     GitHub,
   },
+  mixins: [Generator],
+  data() {
+    return {
+      codeBox: false,
+    };
+  },
   computed: {
     ...mapGetters(['getNotification']),
-  },
-  methods: {
-    ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
-    showCodeBox() {
-      this.codeBox = true;
-    },
-    closeCodeBox() {
-      this.codeBox = false;
-    },
-    async copyCode() {
-      await this.$copyText(this.configureGradient());
-      this.showNotification({
-        show: true,
-        message: 'Code Copied',
-      });
-    },
   },
   mounted() {
     const externalScript = document.createElement('script');
@@ -103,10 +92,21 @@ export default {
       }
     });
   },
-  data() {
-    return {
-      codeBox: false,
-    };
+  methods: {
+    ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
+    showCodeBox() {
+      this.codeBox = true;
+    },
+    closeCodeBox() {
+      this.codeBox = false;
+    },
+    async copyCode() {
+      await this.$copyText(this.configureGradient());
+      this.showNotification({
+        show: true,
+        message: 'Code Copied',
+      });
+    },
   },
 };
 </script>

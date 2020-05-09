@@ -16,11 +16,11 @@ export default {
     ChoosePalette,
     SelectedPalette,
   },
-  methods: {
-    ...mapActions(['toggleAdvancedSettings']),
-  },
   computed: {
     ...mapGetters(['advancedSettings']),
+  },
+  methods: {
+    ...mapActions(['toggleAdvancedSettings']),
   },
 };
 </script>

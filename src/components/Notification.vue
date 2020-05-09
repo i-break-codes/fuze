@@ -11,9 +11,6 @@ import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Notification',
-  methods: {
-    ...mapActions(['showNotification']),
-  },
   computed: {
     ...mapGetters(['getNotification']),
   },
@@ -24,6 +21,9 @@ export default {
         message: '',
       });
     }, 2000);
+  },
+  methods: {
+    ...mapActions(['showNotification']),
   },
 };
 </script>

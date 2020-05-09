@@ -15,9 +15,6 @@ import Generator from '@/mixins/Generator';
 export default {
   name: 'GradientAnimationSpeedSettings',
   mixins: [Generator],
-  components: {
-    VueSlider,
-  },
   data() {
     return {
       speed: 10,
@@ -27,6 +24,9 @@ export default {
         max: 40,
       },
     };
+  },
+  components: {
+    VueSlider,
   },
   methods: {
     ...mapActions(['changeSpeed']),
