@@ -25,6 +25,9 @@ import Generator from '@/mixins/Generator';
 
 export default {
   name: 'SelectedPalette',
+  components: {
+    Remove,
+  },
   mixins: [Generator],
   data() {
     return {
@@ -60,9 +63,6 @@ export default {
         message: 'Color Removed',
       });
     },
-  },
-  components: {
-    Remove,
   },
 };
 </script>
