@@ -1,5 +1,5 @@
 <template>
-  <a href="https://github.com/i-break-codes">
+  <a href="https://github.com/i-break-codes/fuze">
     <GitHubLogo />
   </a>
 </template>

@@ -8,6 +8,7 @@
       <p>CSS Gradient Animator</p>
       <button @click.stop="showCodeBox($event)">View Code <Code/></button>
       <p class="unsupported-screen-size">The tool is designed for the desktop.</p>
+      <a href="https://github.com/i-break-codes/fuze" class="mobile-github-button"><GitHub />Check on GitHub</a>
     </div>
     <p class="instruction">
       hit <strong>spacebar</strong> to randomize or hit <strong>c</strong> to copy
@@ -27,12 +28,13 @@
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import Config from '@/config';
+import Remove from '@/assets/close.svg';
+import Code from '@/assets/code.svg';
+import GitHub from '@/assets/github.svg';
 import Sidebar from '@/components/Sidebar';
 import Contribute from '@/components/Contribute';
 import Version from '@/components/Version';
 import Generator from '@/mixins/Generator';
-import Remove from '@/assets/close.svg';
-import Code from '@/assets/code.svg';
 import Notification from '@/components/Notification';
 
 export default {
@@ -53,6 +55,7 @@ export default {
     Remove,
     Contribute,
     Version,
+    GitHub,
   },
   computed: {
     ...mapGetters(['getNotification']),
@@ -120,7 +123,8 @@ code {
   border-radius: 3px;
 }
 
-button {
+button,
+.mobile-github-button {
   background-color: transparent;
   border: 1px solid var(--white);
   padding: 10px 20px;
@@ -151,7 +155,13 @@ button {
     top: 50%;
     transform: translateY(-50%);
     margin-top: -1px; //todo because am getting too old to handle css these days
+    fill: var(--white);
   }
+}
+
+.mobile-github-button {
+  padding-left: 60px;
+  display: none;
 }
 
 .copy-code {
@@ -237,6 +247,10 @@ button {
         display: block;
       }
     }
+  }
+
+  .mobile-github-button {
+    display: inline-block;
   }
 }
 </style>
