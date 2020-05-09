@@ -51,9 +51,6 @@ export default {
         message: 'All Palettes Removed',
       });
     },
-    showOptions(event) {
-      event.target.querySelector('.remove').classList.toggle('hide');
-    },
     remove(palette) {
       this.removePalette(palette);
       this.setGradient();
