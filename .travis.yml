@@ -9,3 +9,4 @@ deploy:
   local_dir: dist
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
+  fqdn: fuze.8bit.codes
