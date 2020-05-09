@@ -34,9 +34,12 @@ const getters = {
   getSpeed: (state) => state.speed,
 };
 
+const cache = ['Settings.angle', 'Settings.speed'];
+
 export default {
   state,
   actions,
   mutations,
   getters,
+  cache,
 };
