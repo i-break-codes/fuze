@@ -81,6 +81,10 @@ export default {
       switch (e.keyCode) {
         case 32:
           this.applyPresets(Config.presets[Math.floor(Math.random() * Config.presets.length)]);
+          this.showNotification({
+            show: true,
+            message: 'Random Gradient Palettes Applied',
+          });
           this.setGradient();
           break;
         case 67:

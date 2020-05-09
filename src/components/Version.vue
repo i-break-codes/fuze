@@ -1,5 +1,5 @@
 <template>
-  <p>rc 1.0a</p>
+  <p>rc 1.0</p>
 </template>
 
 <style lang="scss" scoped>
