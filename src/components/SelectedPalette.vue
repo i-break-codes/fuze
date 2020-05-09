@@ -9,7 +9,7 @@
           @click.prevent="setActivePalette(i)"
       >
       <span class="remove" :class="{ 'hide': activePalette !== i }">
-        <a href="#" @click.stop="remove(palette, $event)"><Remove/></a>
+        <a href="#" @click.stop="remove(palette)"><Remove/></a>
       </span>
       </li>
     </ul>
@@ -25,6 +25,9 @@ import Generator from '@/mixins/Generator';
 
 export default {
   name: 'SelectedPalette',
+  components: {
+    Remove,
+  },
   mixins: [Generator],
   data() {
     return {
@@ -51,11 +54,7 @@ export default {
         message: 'All Palettes Removed',
       });
     },
-    showOptions(event) {
-      event.target.querySelector('.remove').classList.toggle('hide');
-    },
-    remove(palette, event) {
-      event.preventDefault();
+    remove(palette) {
       this.removePalette(palette);
       this.setGradient();
       this.activePalette = 0;
@@ -64,9 +63,6 @@ export default {
         message: 'Color Removed',
       });
     },
-  },
-  components: {
-    Remove,
   },
 };
 </script>

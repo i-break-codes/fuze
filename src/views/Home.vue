@@ -6,7 +6,7 @@
     <div class="intro" :class="{ 'fadeOut': codeBox, 'fadeIn': !codeBox }">
       <h1>FUZE</h1>
       <p>CSS Gradient Animator</p>
-      <button @click.stop="showCodeBox($event)">View Code <Code/></button>
+      <button @click.stop="showCodeBox">View Code <Code/></button>
       <p class="unsupported-screen-size">The tool is designed for the desktop.</p>
       <a href="https://github.com/i-break-codes/fuze" class="mobile-github-button"><GitHub />Check on GitHub</a>
     </div>
@@ -19,7 +19,7 @@
       <pre>
         {{ this.configureGradient().replace(/^ {8}/gm, '') }}
       </pre>
-      <a href="#" class="copy-code" @click.stop="copyCode($event)">Click here to Copy code</a>
+      <a href="#" class="copy-code" @click.stop="copyCode">Click here to Copy code</a>
     </code>
     <Version />
   </div>
@@ -39,7 +39,6 @@ import Notification from '@/components/Notification';
 
 export default {
   name: 'Home',
-  mixins: [Generator],
   metaInfo: {
     title: 'CSS Gradient Animator',
     titleTemplate: '%s | Fuze',
@@ -57,27 +56,14 @@ export default {
     Version,
     GitHub,
   },
+  mixins: [Generator],
+  data() {
+    return {
+      codeBox: false,
+    };
+  },
   computed: {
     ...mapGetters(['getNotification']),
-  },
-  methods: {
-    ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
-    showCodeBox(event) {
-      event.preventDefault();
-      this.codeBox = true;
-    },
-    closeCodeBox() {
-      this.codeBox = false;
-    },
-    async copyCode(event) {
-      event.preventDefault();
-
-      await this.$copyText(this.configureGradient());
-      this.showNotification({
-        show: true,
-        message: 'Code Copied',
-      });
-    },
   },
   mounted() {
     const externalScript = document.createElement('script');
@@ -95,6 +81,9 @@ export default {
           });
           this.setGradient();
           break;
+        case 86:
+          this.showCodeBox();
+          break;
         case 67:
           this.copyCode();
           break;
@@ -103,10 +92,21 @@ export default {
       }
     });
   },
-  data() {
-    return {
-      codeBox: false,
-    };
+  methods: {
+    ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
+    showCodeBox() {
+      this.codeBox = true;
+    },
+    closeCodeBox() {
+      this.codeBox = false;
+    },
+    async copyCode() {
+      await this.$copyText(this.configureGradient());
+      this.showNotification({
+        show: true,
+        message: 'Code Copied',
+      });
+    },
   },
 };
 </script>

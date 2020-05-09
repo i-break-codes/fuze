@@ -15,9 +15,6 @@ import Generator from '@/mixins/Generator';
 export default {
   name: 'GradientAngleSettings',
   mixins: [Generator],
-  components: {
-    VueSlider,
-  },
   data() {
     return {
       angle: 45,
@@ -27,6 +24,9 @@ export default {
         max: 360,
       },
     };
+  },
+  components: {
+    VueSlider,
   },
   methods: {
     ...mapActions(['changeAngle']),

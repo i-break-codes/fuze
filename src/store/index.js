@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import General from './modules/General';
+import Palette from './modules/PaletteStore';
+import Notification from './modules/NotificationStore';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    General,
+    Palette,
+    Notification,
   },
 });

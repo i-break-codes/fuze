@@ -1,6 +1,6 @@
 <template>
   <section class="choose-palettes-section">
-    <h3>choose palettes</h3>
+    <h3>add palette</h3>
     <div class="pickr">
       <button type="button" class="pcr-button"></button>
     </div>
