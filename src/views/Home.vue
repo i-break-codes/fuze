@@ -80,6 +80,11 @@ export default {
     },
   },
   mounted() {
+    const externalScript = document.createElement('script');
+    externalScript.setAttribute('src', 'https://buttons.github.io/buttons.js');
+    externalScript.setAttribute('defer', 'defer');
+    document.head.appendChild(externalScript);
+
     window.addEventListener('keyup', (e) => {
       switch (e.keyCode) {
         case 32:
