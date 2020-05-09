@@ -9,7 +9,7 @@
           @click.prevent="setActivePalette(i)"
       >
       <span class="remove" :class="{ 'hide': activePalette !== i }">
-        <a href="#" @click.stop="remove(palette, $event)"><Remove/></a>
+        <a href="#" @click.stop="remove(palette)"><Remove/></a>
       </span>
       </li>
     </ul>
@@ -54,8 +54,7 @@ export default {
     showOptions(event) {
       event.target.querySelector('.remove').classList.toggle('hide');
     },
-    remove(palette, event) {
-      event.preventDefault();
+    remove(palette) {
       this.removePalette(palette);
       this.setGradient();
       this.activePalette = 0;
