@@ -70,7 +70,9 @@ export default {
       this.codeBox = false;
     },
     async copyCode(event) {
-      event.preventDefault();
+      if (event) {
+        event.preventDefault();
+      }
 
       await this.$copyText(this.configureGradient());
       this.showNotification({
