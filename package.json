@@ -18,6 +18,7 @@
     "uuid": "^8.0.0",
     "v-click-outside-x": "^4.1.0",
     "vue": "^2.6.11",
+    "vue-analytics": "^5.22.1",
     "vue-click-outside": "^1.1.0",
     "vue-clipboard2": "^0.3.1",
     "vue-meta": "^2.3.3",
