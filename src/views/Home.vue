@@ -6,7 +6,7 @@
     <div class="intro" :class="{ 'fadeOut': codeBox, 'fadeIn': !codeBox }">
       <h1>FUZE</h1>
       <p>CSS Gradient Animator</p>
-      <button @click.stop="showCodeBox($event)">View Code <Code/></button>
+      <button @click.stop="showCodeBox">View Code <Code/></button>
       <p class="unsupported-screen-size">The tool is designed for the desktop.</p>
       <a href="https://github.com/i-break-codes/fuze" class="mobile-github-button"><GitHub />Check on GitHub</a>
     </div>
@@ -19,7 +19,7 @@
       <pre>
         {{ this.configureGradient().replace(/^ {8}/gm, '') }}
       </pre>
-      <a href="#" class="copy-code" @click.stop="copyCode($event)">Click here to Copy code</a>
+      <a href="#" class="copy-code" @click.stop="copyCode">Click here to Copy code</a>
     </code>
     <Version />
   </div>
@@ -62,18 +62,13 @@ export default {
   },
   methods: {
     ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
-    showCodeBox(event) {
-      event.preventDefault();
+    showCodeBox() {
       this.codeBox = true;
     },
     closeCodeBox() {
       this.codeBox = false;
     },
-    async copyCode(event) {
-      if (event) {
-        event.preventDefault();
-      }
-
+    async copyCode() {
       await this.$copyText(this.configureGradient());
       this.showNotification({
         show: true,
@@ -96,6 +91,9 @@ export default {
             message: 'Random Gradient Palettes Applied',
           });
           this.setGradient();
+          break;
+        case 86:
+          this.showCodeBox();
           break;
         case 67:
           this.copyCode();
