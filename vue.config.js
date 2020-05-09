@@ -14,7 +14,5 @@ module.exports = {
         return p;
       });
   },
-  publicPath: process.env.NODE_ENV === 'production'
-    ? '/fuze/'
-    : '/',
+  publicPath: '/',
 };
