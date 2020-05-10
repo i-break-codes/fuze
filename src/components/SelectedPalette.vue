@@ -9,7 +9,7 @@
           @click.prevent="setActivePalette(i)"
       >
       <span class="remove" :class="{ 'hide': activePalette !== i }">
-        <a href="#" @click.stop="remove(palette)"><Remove/></a>
+        <a href="#" @click.stop="remove(i)"><Remove/></a>
       </span>
       </li>
     </ul>
@@ -55,8 +55,8 @@ export default {
         message: 'All Palettes Removed',
       });
     },
-    remove(palette) {
-      this.removePalette(palette);
+    remove(index) {
+      this.removePalette(index - 1);
       this.setGradient();
       this.activePalette = 0;
       this.showNotification({
