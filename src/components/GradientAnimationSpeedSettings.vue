@@ -1,7 +1,8 @@
 <template>
   <section>
     <h3>speed</h3>
-    <VueSlider v-model="speed" v-bind="sliderConfig" @drag-end="triggerChangeSpeed" />
+    <VueSlider v-model="speed" v-bind="sliderConfig"
+               @drag-end="triggerChangeSpeed" @click.native="triggerChangeSpeed"/>
     <p>{{ speed }}s</p>
   </section>
 </template>
@@ -27,6 +28,9 @@ export default {
   },
   components: {
     VueSlider,
+  },
+  mounted() {
+    this.speed = this.$store.state.Settings.speed;
   },
   methods: {
     ...mapActions(['changeSpeed']),

@@ -1,8 +1,9 @@
 <template>
   <section>
     <h3>gradient angle</h3>
-    <VueSlider v-model="angle" v-bind="sliderConfig" @drag-end="triggerChangeAngle" />
-    <p>{{ getAngle }}°</p>
+    <VueSlider v-model="angle" v-bind="sliderConfig"
+               @dragEnd="triggerChangeAngle" @click.native="triggerChangeAngle" />
+    <p>{{ angle }}°</p>
   </section>
 </template>
 
@@ -27,6 +28,9 @@ export default {
   },
   components: {
     VueSlider,
+  },
+  mounted() {
+    this.angle = this.$store.state.Settings.angle;
   },
   methods: {
     ...mapActions(['changeAngle']),
