@@ -47,7 +47,7 @@ export default {
     this.slider = this.$store.state.Settings[this.element];
   },
   methods: {
-    ...mapActions(['changeSetting']),
+    ...mapActions('Settings', ['changeSetting']),
     triggerChange() {
       this.changeSetting({ setting: this.element, value: this.slider });
       this.setGradient();

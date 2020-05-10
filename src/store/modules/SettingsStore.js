@@ -23,14 +23,12 @@ const mutations = {
 };
 
 const getters = {
-  advancedSettings: (state) => state.advancedSettings,
-  getAngle: (state) => state.angle,
-  getSpeed: (state) => state.speed,
 };
 
 const cache = ['Settings.angle', 'Settings.speed'];
 
 export default {
+  namespaced: true,
   state,
   actions,
   mutations,

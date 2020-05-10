@@ -1,21 +1,22 @@
-import { mapGetters } from 'vuex';
+import { mapGetters, mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['allPalettes', 'getAngle', 'getSpeed']),
+    ...mapGetters(['allPalettes']),
+    ...mapState('Settings', ['angle', 'speed']),
     paletteCount() {
       return this.allPalettes.length;
     },
   },
   methods: {
     configureGradient() {
-      const constructBackground = (this.paletteCount > 1 ? `linear-gradient(${this.getAngle ? this.getAngle : 45}deg, ${this.allPalettes.join(', ')})` : this.allPalettes[0] || 'linear-gradient(-45deg, #EA225E, #C22286, #612E8D)');
+      const constructBackground = (this.paletteCount > 1 ? `linear-gradient(${this.angle ? this.angle : 45}deg, ${this.allPalettes.join(', ')})` : this.allPalettes[0] || 'linear-gradient(-45deg, #EA225E, #C22286, #612E8D)');
       const backgroundSize = this.paletteCount ? this.paletteCount * 200 : 200;
       const constructCode = `
         body {
           background: ${constructBackground};
           background-size: ${backgroundSize}% ${backgroundSize}%;
-          animation: GradientBackground ${this.getSpeed ? this.getSpeed : 10}s ease infinite;
+          animation: GradientBackground ${this.speed ? this.speed : 10}s ease infinite;
         }
 
         @keyframes GradientBackground {

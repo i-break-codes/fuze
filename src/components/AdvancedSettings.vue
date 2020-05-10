@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import DynamicSlider from '@/components/DynamicSlider';
 
 export default {
@@ -16,10 +16,10 @@ export default {
     DynamicSlider,
   },
   computed: {
-    ...mapGetters(['advancedSettings']),
+    ...mapState('Settings', ['advancedSettings']),
   },
   methods: {
-    ...mapActions(['toggleAdvancedSettings']),
+    ...mapActions('Settings', ['toggleAdvancedSettings']),
   },
 };
 </script>
