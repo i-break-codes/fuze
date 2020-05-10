@@ -1,18 +1,18 @@
 <template>
   <div
-    :data-notification-type="getNotification.type"
-    :class="{ 'fadeInDown': getNotification.show }">
-    <p>{{ getNotification.message }}</p>
+    :data-notification-type="notification.type"
+    :class="{ 'fadeInDown': notification.show }">
+    <p>{{ notification.message }}</p>
   </div>
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'Notification',
   computed: {
-    ...mapGetters(['getNotification']),
+    ...mapState('Notification', ['notification']),
   },
   mounted() {
     setTimeout(() => {

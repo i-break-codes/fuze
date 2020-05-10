@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     ...mapActions(['addPalette', 'showNotification']),
+    ...mapActions('Notification', ['showNotification']),
   },
 };
 </script>

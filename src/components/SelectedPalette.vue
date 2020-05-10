@@ -38,7 +38,8 @@ export default {
     ...mapGetters(['allPalettes']),
   },
   methods: {
-    ...mapActions(['clearAll', 'removePalette', 'showNotification']),
+    ...mapActions(['clearAll', 'removePalette']),
+    ...mapActions('Notification', ['showNotification']),
     removeSelection() {
       this.activePalette = 0;
     },
