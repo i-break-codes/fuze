@@ -8,11 +8,8 @@ const actions = {
   toggleAdvancedSettings({ commit }) {
     commit('SET_ADVANCED_SETTINGS');
   },
-  changeAngle({ commit }, angle) {
-    commit('SET_ANGLE', angle);
-  },
-  changeSpeed({ commit }, speed) {
-    commit('SET_SPEED', speed);
+  changeSetting({ commit }, { setting, value }) {
+    commit('SET_SETTING', { setting, value });
   },
 };
 
@@ -20,23 +17,21 @@ const mutations = {
   SET_ADVANCED_SETTINGS: (state) => {
     state.advancedSettings = !state.advancedSettings;
   },
-  SET_ANGLE: (state, angle) => {
-    state.angle = angle;
-  },
-  SET_SPEED: (state, speed) => {
-    state.speed = speed;
+  SET_SETTING: (state, { setting, value }) => {
+    state[setting] = value;
   },
 };
 
 const getters = {
-  advancedSettings: (state) => state.advancedSettings,
-  getAngle: (state) => state.angle,
-  getSpeed: (state) => state.speed,
 };
 
+const cache = ['Settings.angle', 'Settings.speed'];
+
 export default {
+  namespaced: true,
   state,
   actions,
   mutations,
   getters,
+  cache,
 };

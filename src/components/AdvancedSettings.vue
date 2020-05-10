@@ -1,27 +1,25 @@
 <template>
   <div :class="{ 'fadeOutRight': !advancedSettings, 'fadeInRight': advancedSettings }">
-    <GradientAngleSettings/>
-    <GradientAnimationSpeedSettings/>
+    <DynamicSlider :min="0" :max="360" element="angle"/>
+    <DynamicSlider :min="1" :max="40" element="speed"/>
     <a href="#" @click.prevent="toggleAdvancedSettings">go back</a>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import GradientAngleSettings from '@/components/GradientAngleSettings';
-import GradientAnimationSpeedSettings from '@/components/GradientAnimationSpeedSettings';
+import { mapState, mapActions } from 'vuex';
+import DynamicSlider from '@/components/DynamicSlider';
 
 export default {
   name: 'AdvancedSettings',
   components: {
-    GradientAngleSettings,
-    GradientAnimationSpeedSettings,
+    DynamicSlider,
   },
   computed: {
-    ...mapGetters(['advancedSettings']),
+    ...mapState('Settings', ['advancedSettings']),
   },
   methods: {
-    ...mapActions(['toggleAdvancedSettings']),
+    ...mapActions('Settings', ['toggleAdvancedSettings']),
   },
 };
 </script>

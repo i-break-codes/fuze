@@ -1,7 +1,7 @@
 <template>
   <div>
     <Contribute />
-    <Notification v-if=getNotification.show />
+    <Notification v-if=notification.show />
     <Sidebar />
     <div class="intro" :class="{ 'fadeOut': codeBox, 'fadeIn': !codeBox }">
       <h1>FUZE</h1>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import Config from '@/config';
 import Remove from '@/assets/close.svg';
 import Code from '@/assets/code.svg';
@@ -63,7 +63,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['getNotification']),
+    ...mapState('Notification', ['notification']),
   },
   mounted() {
     const externalScript = document.createElement('script');
@@ -93,7 +93,8 @@ export default {
     });
   },
   methods: {
-    ...mapActions(['applyPresets', 'toggleCodeBox', 'showNotification']),
+    ...mapActions('Palette', ['applyPresets', 'toggleCodeBox']),
+    ...mapActions('Notification', ['showNotification']),
     showCodeBox() {
       this.codeBox = true;
     },

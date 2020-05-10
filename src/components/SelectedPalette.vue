@@ -1,25 +1,25 @@
 <template>
   <section class="selected-palettes-section">
     <h3>selected palettes</h3>
-    <ul v-if="allPalettes.length" v-click-outside="removeSelection">
+    <ul v-if="palettes.length" v-click-outside="removeSelection">
       <li
-          v-for="(palette, i) in allPalettes"
+          v-for="(palette, i) in palettes"
           :key="i++"
           :style="{ backgroundColor: palette }"
           @click.prevent="setActivePalette(i)"
       >
       <span class="remove" :class="{ 'hide': activePalette !== i }">
-        <a href="#" @click.stop="remove(palette)"><Remove/></a>
+        <a href="#" @click.stop="remove(i)"><Remove/></a>
       </span>
       </li>
     </ul>
     <p v-else>none</p>
-    <a v-if="allPalettes.length" href="#" @click.prevent="reset">clear all</a>
+    <a v-if="palettes.length" href="#" @click.prevent="reset">clear all</a>
   </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import Remove from '@/assets/close.svg';
 import Generator from '@/mixins/Generator';
 
@@ -35,10 +35,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allPalettes']),
+    ...mapState('Palette', ['palettes']),
   },
   methods: {
-    ...mapActions(['clearAll', 'removePalette', 'showNotification']),
+    ...mapActions('Palette', ['clearAll', 'removePalette']),
+    ...mapActions('Notification', ['showNotification']),
     removeSelection() {
       this.activePalette = 0;
     },
@@ -54,8 +55,8 @@ export default {
         message: 'All Palettes Removed',
       });
     },
-    remove(palette) {
-      this.removePalette(palette);
+    remove(index) {
+      this.removePalette(index - 1);
       this.setGradient();
       this.activePalette = 0;
       this.showNotification({

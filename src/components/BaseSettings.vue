@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import ChoosePalette from '@/components/ChoosePalettes';
 import SelectedPalette from '@/components/SelectedPalette';
 
@@ -17,10 +17,10 @@ export default {
     SelectedPalette,
   },
   computed: {
-    ...mapGetters(['advancedSettings']),
+    ...mapState('Settings', ['advancedSettings']),
   },
   methods: {
-    ...mapActions(['toggleAdvancedSettings']),
+    ...mapActions('Settings', ['toggleAdvancedSettings']),
   },
 };
 </script>
