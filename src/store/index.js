@@ -8,7 +8,7 @@ import Settings from './modules/SettingsStore';
 Vue.use(Vuex);
 
 const persistedStore = createPersistedState({
-  paths: [...Settings.cache],
+  paths: [...Settings.cache, ...Palette.cache],
 });
 
 export default new Vuex.Store({

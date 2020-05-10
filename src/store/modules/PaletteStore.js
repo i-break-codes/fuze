@@ -38,10 +38,13 @@ const mutations = {
 const getters = {
 };
 
+const cache = ['Palette.palettes'];
+
 export default {
   namespaced: true,
   state,
   actions,
   mutations,
   getters,
+  cache,
 };
