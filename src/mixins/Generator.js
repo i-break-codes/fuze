@@ -8,6 +8,11 @@ export default {
       return this.palettes.length;
     },
   },
+  mounted() {
+    if (this.palettes.length > 0) {
+      this.setGradient();
+    }
+  },
   methods: {
     configureGradient() {
       const constructBackground = (this.paletteCount > 1 ? `linear-gradient(${this.angle ? this.angle : 45}deg, ${this.palettes.join(', ')})` : this.palettes[0] || 'linear-gradient(-45deg, #EA225E, #C22286, #612E8D)');
