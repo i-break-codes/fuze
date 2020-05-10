@@ -2,11 +2,11 @@
   <div>
     <Contribute />
     <Notification v-if=notification.show />
-    <Sidebar />
+    <Sidebar :hideSidebar="hideSidebar" />
     <div class="intro" :class="{ 'fadeOut': codeBox, 'fadeIn': !codeBox }">
       <h1>FUZE</h1>
       <p>CSS Gradient Animator</p>
-      <button @click.stop="showCodeBox">View Code <Code/></button>
+      <button @click.stop="toggleCodeBox">View Code <Code/></button>
       <p class="unsupported-screen-size">The tool is designed for the desktop.</p>
       <a href="https://github.com/i-break-codes/fuze" class="mobile-github-button"><GitHub />Check on GitHub</a>
     </div>
@@ -59,6 +59,7 @@ export default {
   mixins: [Generator],
   data() {
     return {
+      hideSidebar: false,
       codeBox: false,
     };
   },
@@ -82,10 +83,13 @@ export default {
           this.setGradient();
           break;
         case 86:
-          this.showCodeBox();
+          this.toggleCodeBox();
           break;
         case 67:
           this.copyCode();
+          break;
+        case 72:
+          this.toggleSidebar();
           break;
         default:
           break;
@@ -95,11 +99,14 @@ export default {
   methods: {
     ...mapActions('Palette', ['applyPresets', 'toggleCodeBox']),
     ...mapActions('Notification', ['showNotification']),
-    showCodeBox() {
-      this.codeBox = true;
+    toggleCodeBox() {
+      this.codeBox = !this.codeBox;
     },
     closeCodeBox() {
       this.codeBox = false;
+    },
+    toggleSidebar() {
+      this.hideSidebar = !this.hideSidebar;
     },
     async copyCode() {
       await this.$copyText(this.configureGradient());

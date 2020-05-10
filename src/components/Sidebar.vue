@@ -1,7 +1,7 @@
 <template>
   <div>
     <a href="#" class="trigger-sidebar"><Menu /></a>
-    <aside class="fadeInLeft">
+    <aside :class="{ 'fadeInLeft': !hideSidebar, 'fadeOutLeft': hideSidebar }">
       <router-link to="/">
         <Logo class="logo" />
       </router-link>
@@ -22,6 +22,12 @@ export default {
     Logo,
     BaseSettings,
     AdvancedSettings,
+  },
+  props: {
+    hideSidebar: {
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>

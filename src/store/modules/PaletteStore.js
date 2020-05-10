@@ -3,6 +3,7 @@
 const state = {
   palettes: [],
   codeBox: false,
+  hideSidebar: false,
 };
 
 const actions = {
