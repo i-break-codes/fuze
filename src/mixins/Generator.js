@@ -1,16 +1,16 @@
-import { mapGetters, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   computed: {
-    ...mapGetters(['allPalettes']),
+    ...mapState('Palette', ['palettes']),
     ...mapState('Settings', ['angle', 'speed']),
     paletteCount() {
-      return this.allPalettes.length;
+      return this.palettes.length;
     },
   },
   methods: {
     configureGradient() {
-      const constructBackground = (this.paletteCount > 1 ? `linear-gradient(${this.angle ? this.angle : 45}deg, ${this.allPalettes.join(', ')})` : this.allPalettes[0] || 'linear-gradient(-45deg, #EA225E, #C22286, #612E8D)');
+      const constructBackground = (this.paletteCount > 1 ? `linear-gradient(${this.angle ? this.angle : 45}deg, ${this.palettes.join(', ')})` : this.palettes[0] || 'linear-gradient(-45deg, #EA225E, #C22286, #612E8D)');
       const backgroundSize = this.paletteCount ? this.paletteCount * 200 : 200;
       const constructCode = `
         body {

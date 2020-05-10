@@ -1,9 +1,9 @@
 <template>
   <section class="selected-palettes-section">
     <h3>selected palettes</h3>
-    <ul v-if="allPalettes.length" v-click-outside="removeSelection">
+    <ul v-if="palettes.length" v-click-outside="removeSelection">
       <li
-          v-for="(palette, i) in allPalettes"
+          v-for="(palette, i) in palettes"
           :key="i++"
           :style="{ backgroundColor: palette }"
           @click.prevent="setActivePalette(i)"
@@ -14,12 +14,12 @@
       </li>
     </ul>
     <p v-else>none</p>
-    <a v-if="allPalettes.length" href="#" @click.prevent="reset">clear all</a>
+    <a v-if="palettes.length" href="#" @click.prevent="reset">clear all</a>
   </section>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import Remove from '@/assets/close.svg';
 import Generator from '@/mixins/Generator';
 
@@ -35,10 +35,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(['allPalettes']),
+    ...mapState('Palette', ['palettes']),
   },
   methods: {
-    ...mapActions(['clearAll', 'removePalette']),
+    ...mapActions('Palette', ['clearAll', 'removePalette']),
     ...mapActions('Notification', ['showNotification']),
     removeSelection() {
       this.activePalette = 0;

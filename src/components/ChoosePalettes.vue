@@ -28,7 +28,7 @@ export default {
     });
   },
   methods: {
-    ...mapActions(['addPalette', 'showNotification']),
+    ...mapActions('Palette', ['addPalette', 'showNotification']),
     ...mapActions('Notification', ['showNotification']),
   },
 };

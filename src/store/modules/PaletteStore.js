@@ -36,10 +36,10 @@ const mutations = {
 };
 
 const getters = {
-  allPalettes: (state) => state.palettes,
 };
 
 export default {
+  namespaced: true,
   state,
   actions,
   mutations,

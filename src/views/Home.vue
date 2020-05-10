@@ -93,7 +93,7 @@ export default {
     });
   },
   methods: {
-    ...mapActions(['applyPresets', 'toggleCodeBox']),
+    ...mapActions('Palette', ['applyPresets', 'toggleCodeBox']),
     ...mapActions('Notification', ['showNotification']),
     showCodeBox() {
       this.codeBox = true;

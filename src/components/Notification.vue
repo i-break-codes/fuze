@@ -23,7 +23,7 @@ export default {
     }, 2000);
   },
   methods: {
-    ...mapActions(['showNotification']),
+    ...mapActions('Notification', ['showNotification']),
   },
 };
 </script>
