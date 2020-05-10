@@ -1,7 +1,7 @@
 <template>
   <div>
     <a href="#" class="trigger-sidebar"><Menu /></a>
-    <aside>
+    <aside class="fadeInLeft">
       <router-link to="/">
         <Logo class="logo" />
       </router-link>
@@ -22,9 +22,6 @@ export default {
     Logo,
     BaseSettings,
     AdvancedSettings,
-  },
-  mounted() {
-    setTimeout(document.getElementsByTagName('aside')[0].classList.add('fadeInLeft'), 2000);
   },
 };
 </script>
