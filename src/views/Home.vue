@@ -2,7 +2,7 @@
   <div>
     <Contribute />
     <Notification v-if=notification.show />
-    <Sidebar />
+    <Sidebar :hideSidebar="hideSidebar" />
     <div class="intro" :class="{ 'fadeOut': codeBox, 'fadeIn': !codeBox }">
       <h1>FUZE</h1>
       <p>CSS Gradient Animator</p>
@@ -59,6 +59,7 @@ export default {
   mixins: [Generator],
   data() {
     return {
+      hideSidebar: false,
       codeBox: false,
     };
   },
@@ -87,6 +88,9 @@ export default {
         case 67:
           this.copyCode();
           break;
+        case 72:
+          this.toggleSidebar();
+          break;
         default:
           break;
       }
@@ -100,6 +104,9 @@ export default {
     },
     closeCodeBox() {
       this.codeBox = false;
+    },
+    toggleSidebar() {
+      this.hideSidebar = !this.hideSidebar;
     },
     async copyCode() {
       await this.$copyText(this.configureGradient());
