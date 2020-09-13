@@ -38,7 +38,15 @@ A simple CSS Gradient Animator tool powered by VueJS, VueX and SASS. Idea behind
 ---
 
 ### Setup
+#### Via Container:
+Install [docker-compose](https://docs.docker.com/compose/) and run:
 
+```
+docker-compose up
+```
+Access app at `http://localhost:8080`
+
+#### Manually:
 The following setup assumes that you've Node installed on your system using NVM (preferred). App is supported on Node v12 LTS +
 
 Install Node Modules
