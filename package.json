@@ -17,7 +17,7 @@
     "register-service-worker": "^1.7.1",
     "uuid": "^8.1.0",
     "v-click-outside-x": "^4.1.0",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-analytics": "^5.22.1",
     "vue-click-outside": "^1.1.0",
     "vue-clipboard2": "^0.3.1",
@@ -42,6 +42,6 @@
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   }
 }
