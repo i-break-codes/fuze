@@ -39,7 +39,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.1",
     "sass-loader": "^8.0.2",
     "vue-svg-loader": "^0.16.0",
     "vue-template-compiler": "^2.6.12"
