@@ -10,7 +10,7 @@
     "deploy": "npm run clean && npm run build"
   },
   "dependencies": {
-    "@sentry/browser": "^5.15.5",
+    "@sentry/browser": "^5.30.0",
     "@sentry/integrations": "^5.15.5",
     "@simonwep/pickr": "^1.6.0",
     "core-js": "^3.6.4",
